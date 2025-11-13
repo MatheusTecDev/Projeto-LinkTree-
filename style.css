@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+:root {
+  --text-color: #27dad1;
+  --bg-url: url(./Background\ darkmode.png);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.1);
+  --switch-button-bg: url(./sun.svg);
+  --profile-text: linear-gradient(to left, rgb(255, 255, 255), rgb(32, 178, 170));
+}
+
+.lightmode {
+  --text-color: #000000;
+  --bg-url: url(./background\ lightmode.png);
+  --stroke-color: rgba(0, 0, 0, 0.2);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-button-bg: url(./moon-stars.svg);
+  --profile-text: linear-gradient(to left, rgb(0, 0, 0), rgba(19, 101, 97, 0.477));
+}
+
+body {
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+body * {
+  font-family: "quantico", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+#caixageral {
+  width: 360px;
+  margin: 56px auto 0px;
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+#profile img {
+    width: 112px;
+    border-radius: 50%;
+}
+
+.textprofile {
+    background: var(--profile-text);
+    background-clip: text;
+    display: block;
+    color: transparent;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+  justify-content: center;
+  align-items: center;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px; 
+  height: 32px; 
+  background: white var(--switch-button-bg) no-repeat center; 
+  border: 0; 
+  border-radius: 50%; 
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.lightmode #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  border-radius: 999px;
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+/*Links - Lista*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background:  var(--surface-color);
+  border: solid 1.5px var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/*peuso-selector*/
+ul li a:hover {
+  background: (--surface-color-hover);
+  border: 1.5px solid var(--text-color)
+}
+
+/*Social-links*/
+#social-links{
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%;
+  
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 24px 0;
+}
