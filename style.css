@@ -7,7 +7,7 @@
 
 :root {
   --text-color: #27dad1;
-  --bg-url: url(./Background\ darkmode.png);
+  --bg-url: url(./Background\ Darkmode\ Mob.png);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --surface-color-hover: rgba(255, 255, 255, 0.2);
@@ -18,7 +18,7 @@
 
 .lightmode {
   --text-color: #000000;
-  --bg-url: url(./background\ lightmode.png);
+  --bg-url: url(./Background\ Lightmode\ Mob.png);
   --stroke-color: rgba(0, 0, 0, 0.2);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.2);
@@ -32,6 +32,7 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    height: 100vh;
 }
 
 body * {
@@ -43,7 +44,8 @@ body * {
 }
 
 #caixageral {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px;
 }
 
@@ -164,4 +166,16 @@ footer {
   text-align: center;
   font-size: 14px;
   padding: 24px 0;
+}
+
+/*Media Queries*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./Background\ darkmode.png);
+  }
+
+  .lightmode {
+    --bg-url: url(./background\ lightmode.png);
+  }
 }
